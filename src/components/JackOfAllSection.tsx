@@ -23,46 +23,57 @@ const cards = [
 
 const JackOfAllSection = () => {
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen py-24 px-6 md:px-12 lg:px-24 bg-secondary/20">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Jack of all</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">Jack of all</h2>
+          <p className="text-xl md:text-2xl text-muted-foreground">
             Comfort in chaos, randomness in routine
           </p>
-          <p className="text-lg text-foreground/80 mt-4">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-foreground/70 mt-6 max-w-2xl"
+          >
             I am all about good outfits, great meals, and killer workouts, with a hint of Bollywood and some Simone de Beauvoir
-          </p>
+          </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
             <motion.a
               key={index}
               href={card.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group block bg-card rounded-2xl overflow-hidden card-hover"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ y: -10 }}
+              className="group block bg-card rounded-3xl overflow-hidden border border-border/30 hover:border-border/60 transition-colors duration-300"
             >
               <div className="aspect-square overflow-hidden">
-                <img
+                <motion.img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 />
               </div>
-              <div className="p-5">
-                <h3 className="font-semibold text-foreground mb-1">{card.title}</h3>
+              <div className="p-6">
+                <h3 className="font-semibold text-foreground text-lg mb-2 group-hover:text-foreground/80 transition-colors">
+                  {card.title}
+                </h3>
                 <p className="text-sm text-muted-foreground">{card.subtitle}</p>
               </div>
             </motion.a>

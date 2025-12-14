@@ -28,42 +28,52 @@ const MarqueeSection = () => {
   const duplicatedImages = [...images, ...images];
 
   return (
-    <section className="py-16 overflow-hidden">
+    <section className="py-24 overflow-hidden bg-secondary/20">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-12 px-6"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        className="text-center mb-16 px-6 md:px-12 lg:px-24"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Chill</h2>
-        <p className="text-xl text-muted-foreground">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">Chill</h2>
+        <p className="text-xl md:text-2xl text-muted-foreground">
           Forever fixing my sleep cycle
         </p>
       </motion.div>
 
       <div className="relative">
-        <div className="flex animate-marquee">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex animate-marquee"
+        >
           {duplicatedImages.map((image, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex-shrink-0 w-80 mx-3 group"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              className="flex-shrink-0 w-80 mx-4 group"
             >
-              <div className="relative rounded-2xl overflow-hidden">
+              <div className="relative rounded-3xl overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.caption}
-                  className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-foreground text-sm font-medium">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                  <p className="text-foreground text-base font-medium">
                     {image.caption}
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
