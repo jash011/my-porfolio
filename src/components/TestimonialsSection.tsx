@@ -35,42 +35,45 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen py-24 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">What are they saying</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">What are they saying</h2>
+          <p className="text-xl md:text-2xl text-muted-foreground">
             My stakeholders say something about me; hopefully, it's nice
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-2xl p-8 border border-border/50"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ y: -5 }}
+              className="bg-card rounded-3xl p-8 md:p-10 border border-border/30 hover:border-border/60 transition-all duration-300"
             >
-              <p className="text-foreground/90 text-lg leading-relaxed mb-6">
+              <p className="text-foreground/90 text-lg md:text-xl leading-relaxed mb-8">
                 "{testimonial.quote}"
               </p>
-              <div className="flex items-center gap-4">
-                <img
+              <div className="flex items-center gap-5">
+                <motion.img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-14 h-14 rounded-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
                 />
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="font-semibold text-foreground text-lg">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
