@@ -14,7 +14,7 @@ const AboutSection = () => {
             className="space-y-8"
           >
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-              Digital designer with a{" "}
+              Developer with a{" "}
               <span className="text-muted-foreground">dash of chaos</span>
             </h2>
             

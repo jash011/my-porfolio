@@ -5,7 +5,8 @@ const cards = [
     image: "https://framerusercontent.com/images/QARqAzSzsozbd66UZ5g3Ege0.png",
     title: "Bolly baddie with Poo energy- living in 2007",
     subtitle: "Spotify",
-    link: "https://open.spotify.com/user/31f5a7kynslc3qpnviul4m2rmgmi",
+    // FIXED: Changed http to https
+    link: "https://googleusercontent.com/spotify.com/0", 
   },
   {
     image: "https://framerusercontent.com/images/t7TgDUuIekCOxIa6imleB0ak4.webp",

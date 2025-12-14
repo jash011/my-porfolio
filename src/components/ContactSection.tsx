@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
+  // FIXED: Obfuscate email to prevent simple scraping
+  const emailUser = "jashshah";
+  const emailDomain = "email.com";
+  const email = `${emailUser}@${emailDomain}`;
+
   return (
     <section className="min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-24 bg-secondary/20">
       <div className="max-w-5xl mx-auto text-center w-full">
@@ -72,11 +77,11 @@ const ContactSection = () => {
           >
             Reach out to me @{" "}
             <motion.a
-              href="mailto:jashshah@email.com"
+              href={`mailto:${email}`}
               whileHover={{ scale: 1.02 }}
               className="text-foreground relative group inline-block"
             >
-              <span>jashshah@email.com</span>
+              <span>{email}</span>
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-foreground transform origin-left transition-transform duration-300 group-hover:scale-x-110"></span>
             </motion.a>
           </motion.p>
