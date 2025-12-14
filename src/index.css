@@ -39,6 +39,9 @@
     --font-heading: 'Manrope', sans-serif;
     --font-body: 'Manrope', sans-serif;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {
@@ -48,6 +51,8 @@
 
   html {
     scroll-behavior: smooth;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
   }
 
   body {

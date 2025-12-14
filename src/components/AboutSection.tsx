@@ -26,7 +26,7 @@ const AboutSection = () => {
               className="relative w-72 h-72 rounded-3xl overflow-hidden"
             >
               <img
-                src="https://framerusercontent.com/images/4dSt64G5V7y7kmoQDU5ZQJHEnU.jpg"
+                src="/pic_of_the_profile.jpg"
                 alt="Jash Shah"
                 className="w-full h-full object-cover"
               />
@@ -39,7 +39,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-muted-foreground text-xl"
             >
-              and I dress like Google calendar ( a busy one !)
+              Finding order in the wild 
             </motion.p>
           </motion.div>
 
@@ -51,10 +51,11 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="space-y-10 md:pt-12"
           >
-            <p className="text-2xl md:text-3xl font-medium leading-relaxed text-foreground/90">
-              Hey there! I'm a Product Designer by day and a midnight snacker by night. 
-              I've spent the last 4+ years designing intuitive experiences for mid-stage 
-              startups like Internshala, Innovaccer, and Navi.
+            <p className="text-base md:text-2xl font-medium leading-relaxed text-foreground/90">
+              Hey there! I'm a Software/Machine Learning developer by day and a midnight Bug Hunter. 
+              I did my Masters in Information technology at Dhirubhai ambani University. I absolutely love all things to do with AI.
+              <br/> Beyond technology, I pursue photography and sketching as creative outlets, and actively engage in sports such as badminton.
+              I enjoy exploring new places and experiences, which continually shape my perspective.
             </p>
 
             <motion.a
