@@ -11,7 +11,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-[12vw] md:text-[10vw] font-extrabold text-foreground leading-none tracking-tighter text-center"
       >
-        Ipsita Bajpai
+        Jash Shah
       </motion.h1>
 
       {/* Rotating badge at bottom */}
